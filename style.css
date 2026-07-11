@@ -1,0 +1,435 @@
+﻿/* Core Styling Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.022em;
+}
+
+body {
+    background-color: #000000;
+    color: #f5f5f7;
+    overflow-x: hidden;
+}
+
+/* Translucent Apple Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 44px;
+    background-color: rgba(22, 22, 23, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+}
+
+.nav-logo {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f5f5f7;
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+    .nav-links a {
+        color: #f5f5f7;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+    }
+
+        .nav-links a:hover, .nav-links a.active {
+            opacity: 1;
+        }
+
+/* Tab Management Visibility */
+.tab-content {
+    display: none;
+    padding-top: 44px;
+}
+
+.active-tab {
+    display: block !important;
+}
+
+/* Dropdown Menu Setup */
+.nav-phone-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.phone-btn {
+    background: transparent;
+    color: #f5f5f7;
+    border: none;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.arrow {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: rgba(22, 22, 23, 0.95);
+    backdrop-filter: blur(20px);
+    min-width: 160px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+}
+
+    .dropdown-content a {
+        color: #f5f5f7;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+.nav-phone-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Subpage Headers */
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #000;
+}
+
+    .page-header h1 {
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .page-header p {
+        font-size: 20px;
+        color: #86868b;
+    }
+
+/* Hero Sections Layout */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+    min-height: 85vh;
+}
+
+.hero-dark {
+    background-color: #000000;
+    color: #f5f5f7;
+}
+
+.hero-light {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.hero-title-sub {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.hero-subtitle, .hero-subtitle-sub {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.hero-subtitle-sub {
+    color: #515154;
+}
+
+.cta-link {
+    color: #0071e3;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+    .cta-link:hover {
+        text-decoration: underline;
+    }
+
+/* Placeholders */
+.hero-image-placeholder {
+    width: 85%;
+    max-width: 960px;
+    height: 400px;
+    background-color: #161617;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #86868b;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: 40px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.hero-light .hero-image-placeholder {
+    background-color: #e8e8ed;
+    color: #86868b;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 18px;
+}
+/* Gallery & Grid Configuration (Dynamic Layout) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px max(22px, calc((100vw - 1024px) / 2));
+    background-color: #000;
+}
+
+.media-card {
+    background-color: #161617;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.media-placeholder {
+    height: 240px;
+    background-color: #232324;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6e6e73;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.media-info {
+    padding: 18px;
+    text-align: left;
+}
+
+    .media-info h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    .media-info p {
+        font-size: 13px;
+        color: #86868b;
+    }
+
+/* Home Info Grid */
+.info-grid {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background-color: #f5f5f7;
+}
+
+.grid-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 18px;
+    min-height: 450px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #1d1d1f;
+}
+
+    .grid-card h3 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .grid-card p {
+        font-size: 14px;
+        color: #6e6e73;
+        max-width: 320px;
+        margin-bottom: 20px;
+    }
+
+.card-image-placeholder {
+    width: 100%;
+    height: 240px;
+    background-color: #f5f5f7;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #b6b6bc;
+}
+
+/* Information Tab Design (Premium Editorial Style) */
+.info-hero {
+    text-align: center;
+    padding: 80px 22px;
+    background-color: #000;
+}
+
+.info-tagline {
+    color: #f5f5f7;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.info-main-title {
+    font-size: 64px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.info-description-lead {
+    font-size: 24px;
+    color: #86868b;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.apple-specs-section {
+    background-color: #1d1d1f;
+    padding: 40px 0;
+}
+
+.spec-row {
+    display: flex;
+    max-width: 1024px;
+    margin: 40px auto;
+    align-items: center;
+    padding: 0 22px;
+    gap: 40px;
+}
+
+    .spec-row.reverse {
+        flex-direction: row-reverse;
+    }
+
+.spec-box {
+    flex: 1;
+}
+
+.spec-highlight {
+    color: #0071e3;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.spec-box h2 {
+    font-size: 36px;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.spec-box p {
+    color: #86868b;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.spec-box-img {
+    flex: 1;
+    height: 300px;
+    background-color: #323236;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #86868b;
+}
+
+/* Footer */
+.apple-footer {
+    background-color: #161617;
+    color: #86868b;
+    padding: 30px 22px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Elegant Scrolling Animations */
+.fading-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+    .fading-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .info-main-title {
+        font-size: 40px;
+    }
+
+    .spec-row, .spec-row.reverse {
+        flex-direction: column;
+    }
+
+    .info-grid {
+        flex-direction: column;
+    }
+}

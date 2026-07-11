@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Kittens — Luxury Breeders</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Apple-style Translucent Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" onclick="switchTab('home')">🐈</a>
+            <ul class="nav-links">
+                <li><a href="#" id="nav-home" class="nav-item active" onclick="switchTab('home')">Home</a></li>
+                <li><a href="#" id="nav-available" class="nav-item" onclick="switchTab('available')">Available Kittens</a></li>
+                <li><a href="#" id="nav-kings-queens" class="nav-item" onclick="switchTab('kings-queens')">Kings/Queens</a></li>
+                <li><a href="#" id="nav-gallery" class="nav-item" onclick="switchTab('gallery')">Gallery</a></li>
+                <li><a href="#" id="nav-info" class="nav-item" onclick="switchTab('info')">Information</a></li>
+            </ul>
+            <div class="nav-phone-dropdown">
+                <button class="phone-btn">📞 (806)-666-6888 <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="tel:8066666888">Call Now (806)-666-6888</a>
+                    <a href="#email-placeholder">Email Us luobenjin0@gmail.com</a>
+                    <a href="#instagram-placeholder">Instagram @benjinluo</a>
+                    <a href="#facebook-placeholder">Facebook @luobenjin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TAB 1: HOME -->
+    <main id="tab-home" class="tab-content active-tab">
+        <section class="hero hero-dark fading-in">
+            <div class="hero-content">
+                <h1 class="hero-title">Luxury Dolls (Houston)</h1>
+                <p class="hero-subtitle">Bred with integrity. Raised with absolute devotion.</p>
+                <div class="hero-cta">
+                    <a href="#" class="cta-link" onclick="switchTab('available')">View Available Kittens &gt;</a>
+                </div>
+            </div>
+            <div class="hero-image-placeholder">
+                <img src="IMG_4768.JPG">    
+            </div>
+        </section>
+
+        <section class="hero hero-light fading-in">
+            <div class="hero-content">
+                <h2 class="hero-title-sub">The Royal Lineage</h2>
+                <p class="hero-subtitle-sub">Meet the extraordinary Kings and Queens behind our premium litters.</p>
+                <div class="hero-cta">
+                    <a href="#" class="cta-link" onclick="switchTab('kings-queens')">Explore Pedigree &gt;</a>
+                </div>
+            </div>
+            <div class="hero-image-placeholder sub-hero-img">
+                <span>[ Insert King/Queen Group Photo Here ]</span>
+            </div>
+        </section>
+
+        <section class="info-grid">
+            <div class="grid-card">
+                <div class="card-text">
+                    <h3>Health Guaranteed</h3>
+                    <p>Every kitten comes fully vaccinated, dewormed, and backed by a comprehensive health guarantee.</p>
+                </div>
+                <div class="card-image-placeholder">[ Health/Vet Photo ]</div>
+            </div>
+            <div class="grid-card">
+                <div class="card-text">
+                    <h3>Socialized & Loved</h3>
+                    <p>Raised directly inside our home environment to guarantee sweet temperaments and seamless adjustments.</p>
+                </div>
+                <div class="card-image-placeholder">[ Home Environment Photo ]</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- TAB 2: AVAILABLE KITTENS -->
+    <main id="tab-available" class="tab-content">
+        <section class="page-header">
+            <h1>Available Kittens</h1>
+            <p>Find your perfect luxury companion. Current reserved and open listings.</p>
+        </section>
+        <section class="gallery-grid" id="available-container">
+            <!-- Programmatically injected via script.js for clean structure -->
+        </section>
+    </main>
+
+    <!-- TAB 3: KINGS & QUEENS -->
+    <main id="tab-kings-queens" class="tab-content">
+        <section class="page-header">
+            <h1>Kings & Queens</h1>
+            <p>The elite heritage and lineage of our breeding program.</p>
+        </section>
+        <section class="gallery-grid">
+            <div class="media-card">
+                <div class="media-placeholder"><span>[ King Photo 1 ]</span></div>
+                <div class="media-info"><h3>Grand Champion Leo</h3><p>Sire • Seal Lynx Point</p></div>
+            </div>
+            <div class="media-card">
+                <div class="media-placeholder"><span>[ King Photo 2 ]</span></div>
+                <div class="media-info"><h3>Apollo of Luxury</h3><p>Sire • Blue Bicolor</p></div>
+            </div>
+            <div class="media-card">
+                <div class="media-placeholder"><span>[ Queen Photo 1 ]</span></div>
+                <div class="media-info"><h3>Duchess Cleo</h3><p>Dam • Seal Bicolor</p></div>
+            </div>
+            <div class="media-card">
+                <div class="media-placeholder"><span>[ Queen Photo 2 ]</span></div>
+                <div class="media-info"><h3>Princess Bella</h3><p>Dam • Blue Mitted</p></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- TAB 4: GALLERY (40 Photo Placeholders) -->
+    <main id="tab-gallery" class="tab-content">
+        <section class="page-header">
+            <h1>Our Gallery</h1>
+            <p>A look into the daily life, growth, and beauty of our litters.</p>
+        </section>
+        <section class="gallery-grid" id="gallery-container">
+            <!-- 40 spaces generated cleanly by script.js -->
+        </section>
+    </main>
+
+    <!-- TAB 5: RAGDOLL INFORMATION (Apple Product Feature Style) -->
+    <main id="tab-info" class="tab-content">
+        <section class="info-hero">
+            <span class="info-tagline">Product Profile</span>
+            <h1 class="info-main-title">The Ragdoll Cat</h1>
+            <p class="info-description-lead">Large, affectionate, and strikingly beautiful. Recognized instantly by their vivid blue eyes and distinct plush point coats.</p>
+        </section>
+
+        <section class="apple-specs-section">
+            <div class="spec-row">
+                <div class="spec-box">
+                    <span class="spec-highlight">Temperament</span>
+                    <h2>Docile & Devoted</h2>
+                    <p>True to their name, Ragdolls are famous for completely relaxing and going limp when held. They exhibit puppy-like behavior, often following you from room to room.</p>
+                </div>
+                <div class="spec-box-img">[ Companion Interaction Photo ]</div>
+            </div>
+
+            <div class="spec-row reverse">
+                <div class="spec-box">
+                    <span class="spec-highlight">Coat & Features</span>
+                    <h2>Premium Plush</h2>
+                    <p>Their coat is semi-long, silky soft, and uniquely low-maintenance due to a lack of dense undercoat. Point coloration darkens gracefully as they mature.</p>
+                </div>
+                <div class="spec-box-img">[ Close-up Texture Profile Photo ]</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="apple-footer">
+        <div class="footer-container">
+            <p>Copyright © 2026 LuxuryDolls. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
