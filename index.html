@@ -95,7 +95,7 @@
         <section class="page-header">
             <h1>Past Litters</h1>
             <p>Meet kittens from past litters who have found their forever homes.</p>
-            <p>Add kitten photos and captions to the <code>pastLitters</code> list in <code>script.js</code>.</p>
+            <p>Photos in our Supabase <code>Kittens</code> folder appear here automatically.</p>
         </section>
         <section class="gallery-grid" id="past-litters-container" aria-label="Photos of rehomed kittens">
         </section>
@@ -170,6 +170,66 @@
             </div>
         </section>
     </main>
+
+    <button id="admin-access-trigger" class="admin-access-trigger" type="button" aria-label="Open administrator sign-in"></button>
+
+    <dialog id="admin-dialog" class="admin-dialog" aria-labelledby="admin-dialog-title">
+        <div class="admin-dialog-header">
+            <h2 id="admin-dialog-title">Website administration</h2>
+            <button id="admin-close" class="admin-close-button" type="button" aria-label="Close">×</button>
+        </div>
+        <p id="admin-message" class="admin-message" role="status" aria-live="polite"></p>
+
+        <section id="admin-login">
+            <p>Sign in with the administrator account you created in Supabase.</p>
+            <form id="admin-login-form" class="admin-form">
+                <label for="admin-login-email">Email</label>
+                <input id="admin-login-email" type="email" autocomplete="username" required>
+                <label for="admin-login-password">Password</label>
+                <input id="admin-login-password" type="password" autocomplete="current-password" required>
+                <button id="admin-login-submit" type="submit">Sign in</button>
+            </form>
+        </section>
+
+        <section id="admin-tools" hidden>
+            <div class="admin-section-heading">
+                <h3>Available kittens</h3>
+                <button id="admin-logout" type="button">Sign out</button>
+            </div>
+            <form id="admin-kitten-form" class="admin-form">
+                <input id="admin-kitten-id" type="hidden">
+                <label for="admin-kitten-name">Kitten name</label>
+                <input id="admin-kitten-name" type="text" maxlength="120" required>
+                <label for="admin-kitten-description">Description</label>
+                <textarea id="admin-kitten-description" rows="3" maxlength="2000"></textarea>
+                <label for="admin-kitten-status">Status</label>
+                <select id="admin-kitten-status">
+                    <option value="available">Available</option>
+                    <option value="reserved">Reserved</option>
+                    <option value="adopted">Adopted</option>
+                </select>
+                <div class="admin-form-actions">
+                    <button id="admin-kitten-save" type="submit">Add kitten</button>
+                    <button id="admin-kitten-cancel" class="admin-secondary-button" type="button">Clear</button>
+                </div>
+            </form>
+            <div id="admin-kitten-list" class="admin-list"></div>
+
+            <h3 class="admin-notes-heading">Private notes</h3>
+            <form id="admin-note-form" class="admin-form">
+                <input id="admin-note-id" type="hidden">
+                <label for="admin-note-title">Title</label>
+                <input id="admin-note-title" type="text" maxlength="160" placeholder="Untitled">
+                <label for="admin-note-content">Note</label>
+                <textarea id="admin-note-content" rows="4" required></textarea>
+                <div class="admin-form-actions">
+                    <button id="admin-note-save" type="submit">Save note</button>
+                    <button id="admin-note-cancel" class="admin-secondary-button" type="button">Clear</button>
+                </div>
+            </form>
+            <div id="admin-note-list" class="admin-list"></div>
+        </section>
+    </dialog>
 
     <!-- Footer -->
     <footer class="apple-footer">
