@@ -47,7 +47,6 @@ async function listStorageObjects(prefix, offset) {
             method: "POST",
             headers: {
                 apikey: supabaseGalleryConfig.anonKey,
-                Authorization: `Bearer ${supabaseGalleryConfig.anonKey}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -60,7 +59,8 @@ async function listStorageObjects(prefix, offset) {
     );
 
     if (!response.ok) {
-        throw new Error(`Supabase Storage returned HTTP ${response.status}`);
+        const details = await response.text();
+        throw new Error(`Supabase Storage returned HTTP ${response.status}: ${details.slice(0, 400)}`);
     }
 
     const objects = await response.json();
@@ -103,7 +103,7 @@ async function getStorageImagePaths(folder) {
         }
     }
 
-    return imagePaths.sort((first, second) => first.localeCompare(second));
+    return [...new Set(imagePaths)].sort((first, second) => first.localeCompare(second));
 }
 
 function showGalleryMessage(container, message) {
@@ -131,7 +131,7 @@ async function loadSupabaseFolder(container, folder, renderImages) {
         renderImages(container, imagePaths);
     } catch (error) {
         console.error(`Could not load photos from the ${folder} folder in Supabase Storage.`, error);
-        showGalleryMessage(container, "Couldn't load photos. Check the Supabase key and Storage read/list permissions, then see the browser console for details.");
+        showGalleryMessage(container, `Couldn't load photos from ${folder}. ${error.message}. Check the Supabase Storage list policy and bucket settings.`);
     }
 }
 
@@ -151,6 +151,10 @@ function renderGalleryImages(container, imagePaths) {
         image.src = getPublicStorageUrl(path);
         image.alt = path.split("/").pop();
         image.loading = "lazy";
+        image.onerror = () => {
+            photo.replaceChildren(document.createTextNode("Image failed to load — verify that the bucket is public."));
+            console.error("Supabase image could not load:", image.src);
+        };
         photo.appendChild(image);
 
         const info = document.createElement("div");
@@ -214,6 +218,10 @@ function renderKingsAndQueens(container, imagePaths) {
             image.src = getPublicStorageUrl(imagePath);
             image.alt = cat.name;
             image.loading = "lazy";
+            image.onerror = () => {
+                photo.replaceChildren(document.createTextNode("Image unavailable — check public bucket setting and filename."));
+                console.error("Supabase image could not load:", image.src);
+            };
             photo.appendChild(image);
         } else {
             const message = document.createElement("span");
