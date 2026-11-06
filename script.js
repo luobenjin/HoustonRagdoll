@@ -174,7 +174,7 @@ const kingsAndQueens = [
     { name: "King Pang Pang [Traditional]", color: "Seal Bicolor", photoName: "Pang Pang" },
     { name: "Queen Yue Yue Champion descendant [Modern]", color: "Blue Lynx Bicolor", photoName: "Yue Yue" },
     { name: "Queen Nian Nian [Traditional]", color: "Seal Bicolor", photoName: "Nian Nian" },
-    { name: "Queen", color: "-", photoName: null }
+    { name: "Queen Wen Wen [Mix]", color: "Lynx Bicolor", photoName: "Wen Wen" }
 ];
 
 function normalizePhotoName(value) {
