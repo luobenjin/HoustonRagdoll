@@ -16,6 +16,7 @@
             <ul class="nav-links">
                 <li><a href="#" id="nav-home" class="nav-item active" onclick="switchTab('home')">Home</a></li>
                 <li><a href="#" id="nav-available" class="nav-item" onclick="switchTab('available')">Available Kittens</a></li>
+                <li><a href="#" id="nav-past-litters" class="nav-item" onclick="switchTab('past-litters')">Past Litters</a></li>
                 <li><a href="#" id="nav-kings-queens" class="nav-item" onclick="switchTab('kings-queens')">Kings/Queens</a></li>
                 <li><a href="#" id="nav-gallery" class="nav-item" onclick="switchTab('gallery')">Gallery</a></li>
                 <li><a href="#" id="nav-info" class="nav-item" onclick="switchTab('info')">Information</a></li>
@@ -24,7 +25,7 @@
                 <button class="phone-btn">📞 (806)-666-6888 <span class="arrow">▼</span></button>
                 <div class="dropdown-content">
                     <a href="tel:8066666888">Call Now (806)-666-6888</a>
-                    <a href="#email-placeholder">Email Us luobenjin0@gmail.com</a>
+                    <a href="#email-placeholder">Email Us luobenjins@gmail.com</a>
                     <a href="#instagram-placeholder">Instagram @benjinluo</a>
                     <a href="#facebook-placeholder">Facebook @luobenjin</a>
                 </div>
@@ -89,44 +90,59 @@
         </section>
     </main>
 
-    <!-- TAB 3: KINGS & QUEENS -->
+    <!-- TAB 3: PAST LITTERS -->
+    <main id="tab-past-litters" class="tab-content">
+        <section class="page-header">
+            <h1>Past Litters</h1>
+            <p>Meet kittens from past litters who have found their forever homes.</p>
+            <p>Add kitten photos and captions to the <code>pastLitters</code> list in <code>script.js</code>.</p>
+        </section>
+        <section class="gallery-grid" id="past-litters-container" aria-label="Photos of rehomed kittens">
+        </section>
+    </main>
+
+    <!-- TAB 4: KINGS & QUEENS -->
     <main id="tab-kings-queens" class="tab-content">
         <section class="page-header">
             <h1>Kings & Queens</h1>
             <p>The elite heritage and lineage of our breeding program.</p>
         </section>
-        <section class="gallery-grid">
-            <div class="media-card">
-                <div class="media-placeholder"><span>[ King Photo 1 ]</span></div>
-                <div class="media-info"><h3>Grand Champion Leo</h3><p>Sire • Seal Lynx Point</p></div>
-            </div>
-            <div class="media-card">
-                <div class="media-placeholder"><span>[ King Photo 2 ]</span></div>
-                <div class="media-info"><h3>Apollo of Luxury</h3><p>Sire • Blue Bicolor</p></div>
-            </div>
-            <div class="media-card">
-                <div class="media-placeholder"><span>[ Queen Photo 1 ]</span></div>
-                <div class="media-info"><h3>Duchess Cleo</h3><p>Dam • Seal Bicolor</p></div>
-            </div>
-            <div class="media-card">
-                <div class="media-placeholder"><span>[ Queen Photo 2 ]</span></div>
-                <div class="media-info"><h3>Princess Bella</h3><p>Dam • Blue Mitted</p></div>
+        <section class="gallery-grid" id="kings-queens-container" aria-label="Photos of breeding cats">
+        </section>
+        <section class="kq-faq" aria-labelledby="kq-faq-title">
+            <div class="kq-faq-inner">
+                <h2 id="kq-faq-title">Traditional & Modern Face: Q&amp;A</h2>
+                <div class="kq-faq-list">
+                    <article class="kq-faq-item">
+                        <h3>What is the difference?</h3>
+                        <p>Traditional Ragdolls have longer, wedge-shaped faces, narrower muzzles, longer noses, and more oval-shaped eyes, giving them an elegant appearance. Modern-style Ragdolls have rounder faces, fuller muzzles, shorter noses, wider-set ears, and larger-looking eyes, giving them a sweeter, more kitten-like appearance even as adults. </p>
+                    </article>
+                    <article class="kq-faq-item">
+                        <h3>Are they separate Ragdoll types?</h3>
+                        <p>No. “Traditional” and “new face” are not separate Ragdoll breeds or official categories in the CFA breed standard. CFA describes the Ragdoll head as a large, modified wedge. A cat's appearance can also change as it grows, and photos or angles can make features look different.</p>
+                    </article>
+                    <article class="kq-faq-item">
+                        <h3>Does face type determine personality?</h3>
+                        <p>No. Face shape alone does not tell you a cat's temperament. When choosing a kitten, consider its individual personality, health records, and how it was raised, along with the look you prefer.</p>
+                    </article>
+                </div>
+                <p class="kq-faq-note">For the formal description, see the <a href="https://cfa.org/breed/ragdoll/" target="_blank" rel="noopener noreferrer">CFA Ragdoll breed standard</a>.</p>
             </div>
         </section>
     </main>
 
-    <!-- TAB 4: GALLERY (40 Photo Placeholders) -->
+    <!-- TAB 5: GALLERY (Photos loaded from Supabase Storage) -->
     <main id="tab-gallery" class="tab-content">
         <section class="page-header">
             <h1>Our Gallery</h1>
             <p>A look into the daily life, growth, and beauty of our litters.</p>
         </section>
         <section class="gallery-grid" id="gallery-container">
-            <!-- 40 spaces generated cleanly by script.js -->
+            <!-- Gallery photos are loaded from Supabase Storage by script.js -->
         </section>
     </main>
 
-    <!-- TAB 5: RAGDOLL INFORMATION (Apple Product Feature Style) -->
+    <!-- TAB 6: RAGDOLL INFORMATION (Apple Product Feature Style) -->
     <main id="tab-info" class="tab-content">
         <section class="info-hero">
             <span class="info-tagline">Product Profile</span>

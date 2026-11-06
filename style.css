@@ -254,6 +254,19 @@ div img {
     border-bottom: 1px solid rgba(255,255,255,0.02);
 }
 
+.past-litter-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.past-litters-empty {
+    grid-column: 1 / -1;
+    color: #86868b;
+    text-align: center;
+    line-height: 1.6;
+}
+
 .media-info {
     padding: 18px;
     text-align: left;
@@ -269,6 +282,58 @@ div img {
         font-size: 13px;
         color: #86868b;
     }
+
+.kq-faq {
+    padding: 56px 22px 64px;
+    background-color: #111112;
+}
+
+.kq-faq-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.kq-faq h2 {
+    margin-bottom: 24px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.kq-faq-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.kq-faq-item {
+    padding: 22px;
+    background-color: #1b1b1d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+}
+
+.kq-faq-item h3 {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.kq-faq-item p,
+.kq-faq-note {
+    color: #a1a1a6;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.kq-faq-note {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.kq-faq-note a {
+    color: #70b7ff;
+}
 
 /* Home Info Grid */
 .info-grid {
